@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片格式转换 - 多功能工具箱</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="image-converter.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">返回首页</a>
+        <h1>图片格式转换</h1>
+        
+        <div class="converter-container">
+            <div class="upload-section">
+                <div class="drop-zone" id="dropZone">
+                    <div class="upload-content">
+                        <svg width="48" height="48" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/>
+                        </svg>
+                        <p>拖放图片到此处或点击选择</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <div class="image-preview">
+                    <img id="previewImage" alt="">
+                </div>
+                <div class="image-info">
+                    <span id="imageSize">大小: 0 KB</span>
+                    <span id="imageDimensions">尺寸: 0 x 0</span>
+                    <span id="imageFormat">格式: -</span>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <div class="format-select">
+                    <label>目标格式</label>
+                    <select id="formatSelect">
+                        <option value="image/png">PNG</option>
+                        <option value="image/jpeg">JPEG</option>
+                        <option value="image/webp">WEBP</option>
+                        <option value="image/bmp">BMP</option>
+                        <option value="image/gif">GIF</option>
+                        <option value="image/tiff">TIFF</option>
+                        <option value="image/svg+xml">SVG</option>
+                        <option value="image/x-icon">ICO</option>
+                    </select>
+                </div>
+                
+                <div class="quality-control" id="qualityControl">
+                    <label>质量 (<span id="qualityValue">80</span>%)</label>
+                    <input type="range" id="qualitySlider" min="1" max="100" value="80">
+                </div>
+
+                <button id="convertBtn" class="action-button" disabled>转换</button>
+                <button id="downloadBtn" class="action-button secondary" disabled>下载</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flash-message" id="flashMessage"></div>
+    <script src="image-converter.js"></script>
+</body>
+</html> 

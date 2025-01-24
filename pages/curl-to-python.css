@@ -1,0 +1,160 @@
+.converter-container {
+    background: var(--secondary-bg);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(20px);
+    display: grid;
+    gap: 30px;
+}
+
+.input-section,
+.output-section {
+    background: var(--tertiary-bg);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label,
+.output-header label {
+    display: block;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--secondary-bg);
+    color: var(--text-primary);
+    font-family: "SF Mono", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.option-group label {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+select {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--secondary-bg);
+    color: var(--text-primary);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.code-container {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.code-container pre {
+    margin: 0;
+    padding: 15px;
+}
+
+.code-container code {
+    font-family: "SF Mono", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.action-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.action-button.secondary {
+    background-color: var(--text-secondary);
+}
+
+.action-button:hover {
+    transform: translateY(-1px);
+}
+
+/* 工具提示 */
+.tooltip {
+    position: fixed;
+    padding: 6px 12px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    animation: fadeInOut 1.5s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .converter-container {
+        padding: 20px;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+} 

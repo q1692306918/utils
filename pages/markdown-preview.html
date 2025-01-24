@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown预览 - 多功能工具箱</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="markdown-preview.css">
+    <!-- 引入 highlight.js 用于代码高亮 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/github.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">返回首页</a>
+        <h1>Markdown预览</h1>
+        <div class="markdown-container">
+            <div class="toolbar">
+                <div class="toolbar-group">
+                    <button data-syntax="**" title="粗体">B</button>
+                    <button data-syntax="*" title="斜体">I</button>
+                    <button data-syntax="~~" title="删除线">S</button>
+                    <button data-syntax="`" title="行内代码">&lt;/&gt;</button>
+                </div>
+                <div class="toolbar-group">
+                    <button data-syntax="# " title="标题1">H1</button>
+                    <button data-syntax="## " title="标题2">H2</button>
+                    <button data-syntax="### " title="标题3">H3</button>
+                </div>
+                <div class="toolbar-group">
+                    <button data-syntax="- " title="无序列表">•</button>
+                    <button data-syntax="1. " title="有序列表">1.</button>
+                    <button data-syntax="> " title="引用">"</button>
+                </div>
+                <div class="toolbar-group">
+                    <button data-syntax="```\n\n```" title="代码块" data-multiline="true">Code</button>
+                    <button data-syntax="---" title="分割线">―</button>
+                    <button data-syntax="[链接文字](url)" title="链接">🔗</button>
+                    <button data-syntax="![图片描述](url)" title="图片">🖼</button>
+                </div>
+            </div>
+            <div class="editor-preview">
+                <div class="editor-section">
+                    <textarea id="markdownInput" placeholder="在此输入Markdown文本..."></textarea>
+                </div>
+                <div class="preview-section">
+                    <div id="preview" class="markdown-body"></div>
+                </div>
+            </div>
+            <div class="status-bar">
+                <div class="word-count">
+                    <span id="wordCount">0</span> 字
+                    <span id="charCount">0</span> 字符
+                </div>
+                <div class="actions">
+                    <button id="copyHtml" class="action-button">复制HTML</button>
+                    <button id="copyMarkdown" class="action-button">复制Markdown</button>
+                    <button id="clearContent" class="action-button secondary">清空内容</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 引入 marked.js 用于Markdown解析 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- 引入 highlight.js 用于代码高亮 -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
+    <script src="markdown-preview.js"></script>
+</body>
+</html> 

@@ -1,0 +1,92 @@
+.converter-container {
+    background: var(--secondary-bg);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(20px);
+}
+
+.current-time {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--tertiary-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.time-display {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin: 10px 0;
+}
+
+.timestamp-display {
+    font-family: monospace;
+    color: var(--accent-color);
+}
+
+.conversion-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .conversion-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.timestamp-to-date, .date-to-timestamp {
+    padding: 20px;
+    background: var(--tertiary-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+h3 {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+input[type="number"], 
+input[type="datetime-local"] {
+    width: calc(100% - 100px);
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-right: 10px;
+    background: var(--secondary-bg);
+    color: var(--text-primary);
+}
+
+select {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--secondary-bg);
+    color: var(--text-primary);
+}
+
+.result {
+    margin-top: 15px;
+    padding: 10px;
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: monospace;
+    min-height: 20px;
+    color: var(--accent-color);
+}
+
+.timestamp-results {
+    margin-top: 15px;
+}
+
+.timestamp-results div {
+    margin: 10px 0;
+    color: var(--text-primary);
+} 

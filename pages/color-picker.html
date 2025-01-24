@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颜色选择器 - 多功能工具箱</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="color-picker.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">返回首页</a>
+        <h1>颜色选择器</h1>
+        <div class="color-picker-container">
+            <div class="color-input-section">
+                <div class="color-preview" id="colorPreview"></div>
+                <div class="color-inputs">
+                    <div class="input-group">
+                        <label>颜色选择器</label>
+                        <input type="color" id="colorPicker">
+                    </div>
+                    <div class="input-group">
+                        <label>HEX</label>
+                        <input type="text" id="hexInput" placeholder="#000000">
+                    </div>
+                    <div class="input-group">
+                        <label>RGB</label>
+                        <input type="text" id="rgbInput" placeholder="rgb(0, 0, 0)">
+                    </div>
+                    <div class="input-group">
+                        <label>HSL</label>
+                        <input type="text" id="hslInput" placeholder="hsl(0, 0%, 0%)">
+                    </div>
+                </div>
+            </div>
+            <div class="color-palette">
+                <h3>调色板</h3>
+                <div class="palette-grid" id="paletteGrid"></div>
+            </div>
+            <div class="color-schemes">
+                <h3>配色方案</h3>
+                <div class="scheme-options">
+                    <button data-scheme="monochromatic">单色</button>
+                    <button data-scheme="analogous">类似色</button>
+                    <button data-scheme="complementary">互补色</button>
+                    <button data-scheme="triadic">三角色</button>
+                    <button data-scheme="split-complementary">分裂互补色</button>
+                </div>
+                <div class="scheme-colors" id="schemeColors"></div>
+            </div>
+        </div>
+    </div>
+    <script src="color-picker.js"></script>
+</body>
+</html> 

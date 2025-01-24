@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON格式化 - 多功能工具箱</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="json-formatter.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">返回首页</a>
+        <h1>JSON格式化</h1>
+        
+        <div class="formatter-container">
+            <div class="control-panel">
+                <button id="formatBtn" class="action-button">格式化</button>
+                <button id="minifyBtn" class="action-button secondary">压缩</button>
+                <select id="indentSize" class="select-input">
+                    <option value="2">2空格缩进</option>
+                    <option value="4">4空格缩进</option>
+                    <option value="tab">Tab缩进</option>
+                </select>
+            </div>
+
+            <div class="split-view">
+                <div class="editor-container">
+                    <div class="line-numbers"></div>
+                    <textarea id="jsonInput" placeholder="在此输入JSON数据..."></textarea>
+                    <div id="errorMsg" class="error-message"></div>
+                </div>
+                <div class="preview-container">
+                    <div id="jsonTree" class="json-tree"></div>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="copyBtn" class="action-button">复制</button>
+                <button id="clearBtn" class="action-button secondary">清空</button>
+            </div>
+        </div>
+    </div>
+    <script src="json-formatter.js"></script>
+</body>
+</html> 

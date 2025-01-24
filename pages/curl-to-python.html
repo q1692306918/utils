@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURL转Python - 多功能工具箱</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="curl-to-python.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/styles/github-dark.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">返回首页</a>
+        <h1>CURL转Python</h1>
+        
+        <div class="converter-container">
+            <div class="input-section">
+                <div class="input-group">
+                    <label>CURL命令</label>
+                    <textarea id="curlInput" placeholder="在此粘贴CURL命令...
+例如：curl -X POST 'https://api.example.com/data' -H 'Content-Type: application/json' -d '{"key": "value"}'"></textarea>
+                </div>
+                <div class="options">
+                    <div class="option-group">
+                        <label>HTTP库选择</label>
+                        <select id="librarySelect">
+                            <option value="requests">requests</option>
+                            <option value="urllib">urllib</option>
+                            <option value="http.client">http.client</option>
+                        </select>
+                    </div>
+                    <div class="option-group">
+                        <label>代码风格</label>
+                        <select id="styleSelect">
+                            <option value="simple">简洁</option>
+                            <option value="detailed">详细</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button id="convertBtn" class="action-button">转换</button>
+                    <button id="formatBtn" class="action-button secondary">格式化CURL</button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="output-header">
+                    <label>Python代码</label>
+                    <button id="copyBtn" class="action-button">复制代码</button>
+                </div>
+                <div class="code-container">
+                    <pre><code id="pythonOutput" class="language-python"></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.8.0/build/highlight.min.js"></script>
+    <script src="curl-to-python.js"></script>
+</body>
+</html> 

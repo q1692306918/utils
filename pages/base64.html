@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64转换 - 多功能工具箱</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="base64.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">返回首页</a>
+        <h1>Base64转换</h1>
+        
+        <div class="converter-container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="text">文本转换</button>
+                <button class="tab-btn" data-tab="image">图片转换</button>
+                <button class="tab-btn" data-tab="decode">Base64转图片</button>
+            </div>
+
+            <!-- 文本转换部分 -->
+            <div class="tab-content active" id="text-tab">
+                <div class="input-section">
+                    <div class="input-group">
+                        <label>输入文本</label>
+                        <textarea id="textInput" placeholder="输入要转换的文本..."></textarea>
+                    </div>
+                    <div class="actions">
+                        <button id="encodeText" class="action-button">编码</button>
+                        <button id="decodeText" class="action-button secondary">解码</button>
+                    </div>
+                </div>
+                <div class="output-section">
+                    <div class="output-group">
+                        <label>转换结果</label>
+                        <textarea id="textOutput" readonly></textarea>
+                    </div>
+                    <button id="copyText" class="action-button">复制结果</button>
+                </div>
+            </div>
+
+            <!-- 图片转换部分 -->
+            <div class="tab-content" id="image-tab">
+                <div class="image-section">
+                    <div class="drop-zone" id="dropZone">
+                        <div class="upload-content">
+                            <svg width="48" height="48" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/>
+                            </svg>
+                            <p>拖放图片到此处或点击选择</p>
+                            <input type="file" id="imageInput" accept="image/*" hidden>
+                        </div>
+                    </div>
+                    <div class="preview-section">
+                        <div class="image-preview">
+                            <img id="imagePreview" alt="">
+                        </div>
+                        <div class="image-info">
+                            <span id="imageSize">大小: 0 KB</span>
+                            <span id="imageDimensions">尺寸: 0 x 0</span>
+                        </div>
+                    </div>
+                    <div class="base64-output">
+                        <label>Base64编码</label>
+                        <textarea id="imageOutput" readonly></textarea>
+                        <button id="copyImage" class="action-button">复制Base64</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Base64转图片部分 -->
+            <div class="tab-content" id="decode-tab">
+                <div class="decode-section">
+                    <div class="input-group">
+                        <label>输入Base64编码</label>
+                        <textarea id="decodeInput" placeholder="输入图片的Base64编码..."></textarea>
+                    </div>
+                    <div class="actions">
+                        <button id="decodeImage" class="action-button">转换为图片</button>
+                        <button id="downloadImage" class="action-button secondary" disabled>下载图片</button>
+                    </div>
+                    <div class="preview-section">
+                        <div class="image-preview">
+                            <img id="decodePreview" alt="">
+                        </div>
+                        <div class="image-info">
+                            <span id="decodeImageInfo">请输入Base64编码</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="base64.js"></script>
+</body>
+</html> 

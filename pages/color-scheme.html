@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配色方案生成 - 多功能工具箱</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="color-scheme.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">返回首页</a>
+        <h1>配色方案生成</h1>
+        
+        <div class="color-scheme-container">
+            <div class="color-input-section">
+                <div class="color-picker">
+                    <label>选择主色调</label>
+                    <input type="color" id="mainColor" value="#DD2762">
+                    <div class="color-info">
+                        <span id="colorHex">#DD2762</span>
+                        <button class="copy-btn" data-clipboard="#DD2762">复制</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scheme-types">
+                <button class="scheme-btn active" data-type="monochromatic">单色</button>
+                <button class="scheme-btn" data-type="analogous">类似色</button>
+                <button class="scheme-btn" data-type="complementary">互补色</button>
+                <button class="scheme-btn" data-type="triadic">三角色</button>
+                <button class="scheme-btn" data-type="split">分裂互补色</button>
+            </div>
+
+            <div class="color-palette">
+                <div class="palette-description">
+                    <h3>生成的配色方案</h3>
+                    <p class="description" id="schemeDescription">
+                        单色配色：基于单一颜色的明度和饱和度变化，创造和谐统一的视觉效果。
+                    </p>
+                </div>
+                <div class="color-grid" id="colorGrid">
+                    <!-- 颜色方块将通过 JavaScript 动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flash-message" id="flashMessage"></div>
+    <script src="color-scheme.js"></script>
+</body>
+</html> 

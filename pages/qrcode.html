@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二维码生成 - 多功能工具箱</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="qrcode.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">返回首页</a>
+        <h1>二维码生成</h1>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="generate">生成二维码</button>
+            <button class="tab-btn" data-tab="scan">扫描二维码</button>
+        </div>
+        <div class="qrcode-container active" id="generate-tab">
+            <div class="input-section">
+                <div class="input-group">
+                    <label>输入内容</label>
+                    <textarea id="qrInput" placeholder="输入文本或URL..."></textarea>
+                </div>
+                <div class="options-group">
+                    <div class="option">
+                        <label>尺寸</label>
+                        <div class="size-input">
+                            <input type="number" id="sizeInput" value="200" min="100" max="1000" step="10">
+                            <span>px</span>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <label>容错级别</label>
+                        <select id="errorLevel">
+                            <option value="L">低 (7%)</option>
+                            <option value="M" selected>中 (15%)</option>
+                            <option value="Q">较高 (25%)</option>
+                            <option value="H">高 (30%)</option>
+                        </select>
+                    </div>
+                    <div class="option">
+                        <label>前景色</label>
+                        <input type="color" id="foregroundColor" value="#000000">
+                    </div>
+                    <div class="option">
+                        <label>背景色</label>
+                        <input type="color" id="backgroundColor" value="#FFFFFF">
+                    </div>
+                </div>
+                <div class="actions">
+                    <button id="generateBtn" class="action-button">生成二维码</button>
+                    <button id="downloadBtn" class="action-button secondary">下载图片</button>
+                </div>
+            </div>
+            <div class="preview-section">
+                <div class="qr-preview">
+                    <div id="qrcode"></div>
+                </div>
+                <div class="preview-info">
+                    <span id="qrSize">尺寸: 200 x 200 px</span>
+                    <span id="contentLength">内容长度: 0 字符</span>
+                </div>
+            </div>
+        </div>
+        <div class="qrcode-container" id="scan-tab">
+            <div class="scan-section">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <svg width="48" height="48" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"/>
+                        </svg>
+                        <p>拖放图片到此处或点击选择</p>
+                        <input type="file" id="scanInput" accept="image/*" hidden>
+                    </div>
+                </div>
+                <div class="scan-preview">
+                    <canvas id="scanCanvas" hidden></canvas>
+                    <img id="scanPreview" alt="">
+                </div>
+                <div class="scan-result">
+                    <h3>扫描结果</h3>
+                    <div class="result-content">
+                        <textarea id="scanResult" readonly placeholder="扫描结果将显示在这里..."></textarea>
+                        <button id="copyScanResult" class="action-button">复制结果</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 引入 qrcode.js 库 -->
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <!-- 引入 jsQR 库用于扫描 -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+    <script src="qrcode.js"></script>
+</body>
+</html> 

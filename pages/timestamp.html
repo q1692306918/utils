@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间戳转换 - 多功能工具箱</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="timestamp.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button">返回首页</a>
+        <h1>时间戳转换</h1>
+        <div class="converter-container">
+            <div class="current-time">
+                <h3>当前时间</h3>
+                <div id="currentTime" class="time-display"></div>
+                <div id="currentTimestamp" class="timestamp-display"></div>
+            </div>
+            
+            <div class="conversion-section">
+                <div class="timestamp-to-date">
+                    <h3>时间戳转日期时间</h3>
+                    <input type="number" id="timestampInput" placeholder="输入时间戳...">
+                    <select id="timestampUnit">
+                        <option value="s">秒</option>
+                        <option value="ms">毫秒</option>
+                    </select>
+                    <div id="dateResult" class="result"></div>
+                </div>
+
+                <div class="date-to-timestamp">
+                    <h3>日期时间转时间戳</h3>
+                    <input type="datetime-local" id="dateInput" step="1">
+                    <div class="timestamp-results">
+                        <div>秒级时间戳: <span id="secondsResult" class="result"></span></div>
+                        <div>毫秒级时间戳: <span id="millisecondsResult" class="result"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="timestamp.js"></script>
+</body>
+</html> 
